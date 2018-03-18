@@ -1,0 +1,15 @@
+@import './variables';
+
+.hfa-form {
+  input.error,
+  select.error,
+  textarea.error {
+      border: 1px solid $error-color !important;
+  }
+
+  &__error {
+    color: $error-color;
+    font-size: $font-xxs;
+    margin-top: .3rem;
+  }
+}

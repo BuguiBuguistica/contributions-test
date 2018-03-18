@@ -1,0 +1,49 @@
+<section class="hfe-contribution-form">
+  <app-tabs class="hfe-contribution-form__wrapper" [tabs]="tabs" (tabSelected)="onTabSelected($event)"></app-tabs>
+  <form *ngIf="activeTab === formTab" class="hfa-form" #formDir="ngForm" [formGroup]="contributionForm" (ngSubmit)="submitForm(contributionForm.value)">
+    <section class="hfe-contribution-form__wrapper">
+      <span class="hfe-contribution-form__label">{{'form.contributionsMeassurements' | translate}}</span>
+      <textarea [ngClass]="{'error': validationMessageService.requiredValidation(contributionForm.controls['description'], formDir)}"
+        [formControl]="contributionForm.controls['description']"></textarea>
+      <div class="hfa-form__error" *ngIf="validationMessageService.requiredValidation(contributionForm.controls['description'], formDir)">
+        {{'form.validations.descriptionRequired' | translate}}</div>
+      <div class="hfe-contribution-form__row">
+        <div class="hfe-contribution-form__group">
+          <span class="hfe-contribution-form__label">{{'form.status' | translate}}</span>
+          <select [ngClass]="{'error': validationMessageService.requiredValidation(contributionForm.controls['status'], formDir)}"
+            formControlName="status">
+            <option *ngFor="let st of status" [ngValue]="st">{{st.description}}</option>
+          </select>
+          <div class="hfa-form__error" *ngIf="validationMessageService.requiredValidation(contributionForm.controls['status'], formDir)">
+            {{'form.validations.statusRequired' | translate}}</div>
+        </div>
+        <div class="hfe-contribution-form__group">
+          <span class="hfe-contribution-form__label">{{'form.contributionVisibility' | translate}}</span>
+          <select [ngClass]="{'error': validationMessageService.requiredValidation(contributionForm.controls['visibilityRole'], formDir)}"
+            formControlName="visibilityRole">
+            <option *ngFor="let role of roles" [ngValue]="role">{{role.description}}</option>
+          </select>
+          <div class="hfa-form__error" *ngIf="validationMessageService.requiredValidation(contributionForm.controls['visibilityRole'], formDir)">
+            {{'form.validations.visibilityRoleRequired' | translate}}</div>
+        </div>
+        <div class="hfe-contribution-form__group">
+          <span class="hfe-contribution-form__label">{{'form.targetDate' | translate}}</span>
+          <ng-datepicker class="hfa-datepicker hfa-datepicker-calendar" [options]="options" [(ngModel)]="targetDate" [formControl]="contributionForm.controls['targetDate']"></ng-datepicker>
+        </div>
+        <div class="hfe-contribution-form__group">
+          <span class="hfe-contribution-form__label">{{'form.jobPosition' | translate}}</span>
+          <select [ngClass]="{'error': validationMessageService.requiredValidation(contributionForm.controls['jobPosition'], formDir)}"
+            formControlName="jobPosition">
+            <option *ngFor="let position of jobPositions" [ngValue]="position">{{position.description}}</option>
+          </select>
+          <div class="hfa-form__error" *ngIf="validationMessageService.requiredValidation(contributionForm.controls['jobPosition'], formDir)">
+            {{'form.validations.visibilityRoleRequired' | translate}}</div>
+        </div>
+      </div>
+    </section>
+    <footer class="hfe-contribution-form__footer">
+      <button class="hfe-btn-secondary" type="button">{{'form.cancel' | translate}}</button>
+      <button class="hfe-btn-primary" type="submitForm">{{'form.save' | translate}}</button>
+    </footer>
+  </form>
+</section>

@@ -1,0 +1,15 @@
+.u {
+  $half: .5rem;
+
+  &-mt-1 {
+    margin-top: $half;
+  }
+
+  &-mb-1 {
+    margin-bottom: $half;
+  }
+
+  &-mr-1 {
+    margin-right: $half;
+  }
+}

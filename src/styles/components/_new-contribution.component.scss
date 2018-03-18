@@ -1,0 +1,64 @@
+@import '../base/variables';
+
+.hfe-new-contribution {
+  $border-button-radius: 20rem;
+
+  background-color: $lighter-color;
+  border: 1px solid $dark-color;
+  border-radius: .5rem;
+  box-shadow: $shadow;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  font-size: $font-xs;
+  height: 5rem;
+  align-items: center;
+  line-height: $font-xl;
+  padding: 0 1rem;
+  margin-top: 1rem;
+
+  &.isFormOpen {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:hover {
+    background-color: rgba($lighter-primary-color, .1);
+    border: 1px solid $primary-color;
+    transition: all $transition-slow ease;
+
+    .hfe-new-contribution__button-bg {
+      background-color: rgba($lighter-primary-color, .4);
+      transition: background-color $transition-regular ease;
+    }
+  }
+
+  &__button {
+    background: $primary-color;
+    border-radius: $border-button-radius;
+    color: $lighter-color;
+    display: flex;
+    height: 2rem;
+    line-height: 1rem;
+    margin: .25rem;
+    padding: .5rem;
+    position: absolute;
+    text-align: center;
+    width: 2rem;
+    z-index: 1000;
+
+    &:hover {
+      background-color: $darker-primary-color;
+      transition: background-color $transition-regular ease;
+    }
+  }
+
+  &__button-bg {
+    background: rgba($lighter-primary-color, 0);
+    border-radius: $border-button-radius;
+    height: 2.5rem;
+    margin-right: 2rem;
+    position: relative;
+    width: 2.5rem;
+  }
+}

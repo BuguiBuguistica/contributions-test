@@ -1,0 +1,7 @@
+<section class="hfe-new-contribution" [ngClass]="{'isFormOpen': isFormOpen}" (click)="toogleForm()">
+  <div class="hfe-new-contribution__button-bg">
+    <div class="hfe-new-contribution__button icon-plus"></div>
+  </div>
+  <span>{{'card.createNew' | translate}}</span>
+</section>
+<app-contribution-form *ngIf="isFormOpen"></app-contribution-form>

@@ -1,0 +1,40 @@
+//Colors
+$darker-color: #4D555C;
+$dark-color: lighten($darker-color, 50%);
+$grey-color: lighten($darker-color, 30%);
+
+$light-color: #F2F5F7;
+$lighter-color: #FFFFFF;
+
+$primary-color: #386F9D;
+$darker-primary-color: darken($primary-color, 10%);
+$lighter-primary-color: lighten($primary-color, 20%);
+
+$ok-color: #3AB17D;
+$error-color: #E50505;
+
+//Fonts family
+$MerriweatherSans: 'Merriweather Sans', sans-serif;
+
+//Fonts weight
+$font-normal: 500;
+$font-light: 300;
+$font-bold: 700;
+
+//Fonts size
+$font-base: 1rem;
+$font-xl: 1.5rem;
+$font-xs: .85rem;
+$font-xxs: .75rem;
+
+//screen sizes
+$phone-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+//transitions
+$transition-slow: .5s;
+$transition-regular: .35s;
+
+//box shadows
+$shadow: 1px 1px 1px 0 rgba($grey-color, .8);

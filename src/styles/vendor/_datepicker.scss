@@ -1,0 +1,48 @@
+@import '../base/variables';
+
+body .hfa-datepicker {
+  position: relative;
+
+  &:after {
+    content: "\e953";
+    color: $primary-color;
+    font-family: 'icomoon';
+    position: absolute;
+    top: .8rem;
+    right: .5rem;
+  }
+}
+
+
+body .hfa-datepicker {
+  .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-input[_ngcontent-c0] {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+body .hfa-datepicker {
+  .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .day-unit[_ngcontent-c0]:hover, .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .day-unit.is-today[_ngcontent-c0], .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .year-unit[_ngcontent-c0]:hover, .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .year-unit.is-today[_ngcontent-c0], .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .day-unit[_ngcontent-c0]:hover, .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .day-unit.is-today[_ngcontent-c0], .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .year-unit[_ngcontent-c0]:hover, .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .year-unit.is-today[_ngcontent-c0]{
+    background: $dark-color;
+  }
+}
+
+body .hfa-datepicker {
+  .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .day-unit[_ngcontent-c0]:hover, .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .day-unit.is-today[_ngcontent-c0], .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .year-unit[_ngcontent-c0]:hover, .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .year-unit.is-today[_ngcontent-c0], .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .day-unit[_ngcontent-c0]:hover, .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .day-unit.is-today[_ngcontent-c0], .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .year-unit[_ngcontent-c0]:hover, .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .year-unit.is-today[_ngcontent-c0]{
+    background: $dark-color;
+    color: $lighter-color;
+  }
+}
+
+body .hfa-datepicker {
+  .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .day-unit.is-selected[_ngcontent-c0], .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-days[_ngcontent-c0] .year-unit.is-selected[_ngcontent-c0], .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .day-unit.is-selected[_ngcontent-c0], .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .main-calendar-container[_ngcontent-c0] .main-calendar-years[_ngcontent-c0] .year-unit.is-selected[_ngcontent-c0]{
+    background: $lighter-primary-color;
+    color: $lighter-color;
+  }
+}
+
+body .hfa-datepicker {
+  .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-calendar-container[_ngcontent-c0] .topbar-container[_ngcontent-c0] .topbar-title[_ngcontent-c0]{
+    color: $primary-color;
+  }
+}

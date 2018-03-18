@@ -1,0 +1,105 @@
+@import '../base/variables';
+
+.hfe-contribution-card {
+  background-color: $lighter-color;
+  border: 1px solid $dark-color;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  box-shadow: $shadow;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  font-size: $font-xs;
+  line-height: $font-xl;
+  margin-top: 1rem;
+  padding: 1.5rem;
+
+  &:hover {
+    background-color: rgba($lighter-color, .5);
+    border: 1px solid $primary-color;
+    transition: all $transition-slow ease;
+  }
+
+  &__description {
+    display: block;
+    max-height: 3rem;
+    overflow: hidden;
+    transition: max-height $transition-slow ease-out;
+
+    &.show-more {
+      max-height: 50rem;
+      transition: max-height $transition-slow ease-in;
+    }
+  }
+
+  &__content {
+    padding-right: 1rem;
+    width: 60%;
+  }
+
+  &__bar {
+    width: 30%;
+  }
+
+  &__details {
+    color: $grey-color;
+    display: flex;
+    font-size: $font-xxs;
+  }
+
+  &__separator {
+    &:after {
+      content: '.';
+      margin: 0 .5rem;
+    }
+  }
+
+  &__button {
+    color: $primary-color;
+    cursor: pointer;
+    display: flex;
+
+    &:hover {
+      color: $lighter-primary-color;
+    }
+  }
+
+  &__edit {
+    cursor: pointer;
+    height: 1.5rem;
+    opacity: 0;
+    padding: 0 2.5rem;
+    width: 10%;
+
+    &:hover {
+      transform: rotate(-45deg);
+      transition: all $transition-regular ease-in;
+    }
+
+    &.editionMode {
+      opacity: 1;
+    }
+  }
+
+  &__form-wrapper {
+    opacity: 0;
+    max-height: 0;
+
+    &.editionMode {
+      opacity: 1;
+      max-height: 80rem;
+      transition: all $transition-slow ease;
+    }
+  }
+
+  &__status {
+    &.statusActive {
+      color: $ok-color;
+    }
+  }
+
+  &__input {
+    margin-bottom: .5rem;
+    width: 100%;
+  }
+}

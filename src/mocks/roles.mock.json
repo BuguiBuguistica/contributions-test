@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "description": "Manager"
+  },
+  {
+    "id": 2,
+    "description": "Technical leader"
+  },
+  {
+    "id": 3,
+    "description": "Developer"
+  },
+  {
+    "id": 4,
+    "description": "Human Resources"
+  }
+]

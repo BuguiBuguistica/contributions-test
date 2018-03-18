@@ -1,0 +1,116 @@
+@import './variables';
+@import '../mixins/fonts';
+@import '../mixins/media-query';
+
+//Import fonts
+@include font-face('Merriweather Sans', 'assets/fonts/MerriweatherSans-Regular', 500, null, ttf);
+@include font-face('Merriweather Sans', 'assets/fonts/MerriweatherSans-Light', 300, null, ttf);
+@include font-face('Merriweather Sans', 'assets/fonts/MerriweatherSans-Bold', 700, null, ttf);
+@include font-face('icomoon', 'assets/fonts/icomoon/icomoon', null, null, ttf);
+
+//Reset styles
+body {
+  background-color: $light-color;
+  color: $darker-color;
+  font-family: $MerriweatherSans;
+  font-size: 16px;
+  font-weight: $font-normal;
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+textarea,
+input[type="text"],
+select {
+  border: 1px solid $dark-color;
+  border-radius: 2px;
+
+  &:focus{
+    border: 1px solid $primary-color;
+    outline: 0;
+  }
+}
+
+select,
+input[type="text"] {
+  color: $darker-color;
+  font-family: $MerriweatherSans;
+  height: 2.5rem;
+  padding: .5rem;
+}
+
+textarea {
+  font-family: $MerriweatherSans;
+  font-size: $font-xs;
+  line-height: $font-xl;
+  resize: none;
+}
+
+option {
+  border: 1px solid $primary-color;
+}
+
+button {
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: $font-xs;
+  font-weight: $font-bold;
+  height: 2.5rem;
+  margin: 0 .3rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.hfe-btn-primary {
+  background-color: $lighter-primary-color;
+  color: $lighter-color;
+  border: 0;
+
+  &:hover {
+    background-color: $darker-primary-color;
+    transition: background-color $transition-regular ease-in;
+  }
+}
+
+.hfe-btn-secondary {
+  background-color: $lighter-color;
+  color: $darker-color;
+  border: 1px solid $dark-color;
+  box-shadow: 3px 6px 6px -4px $dark-color;
+
+  &:hover {
+    background-color: $light-color;
+    transition: background-color $transition-regular ease-in;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  @include phone {
+    padding: 0 1rem;
+  }
+
+  @include tablet {
+    padding: 0 5rem;
+  }
+
+  @include desktop {
+    padding: 0 15rem;
+  }
+}
+
+

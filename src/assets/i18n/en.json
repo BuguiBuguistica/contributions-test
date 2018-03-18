@@ -1,0 +1,33 @@
+{
+  "header": {
+    "myContribution": "MyContribution"
+  },
+  "menu": {
+    "myContribution": "My Contribution"
+  },
+  "card": {
+    "creation": "Creation:",
+    "target": "Target:",
+    "showMore": "show more",
+    "showLess": "show less",
+    "createNew": "Create new contribution"
+  },
+  "myContribution": {
+    "counterLabel": "Showing {{value}} contributions"
+  },
+  "form": {
+    "contributionsMeassurements": "Contributions description & meassurements",
+    "status": "Status:",
+    "contributionVisibility": "Who can see this distribution:",
+    "targetDate": "Target date:",
+    "jobPosition": "Job position:",
+    "save": "Save",
+    "cancel": "Cancel",
+    "validations": {
+      "descriptionRequired": "Description is required",
+      "statusRequired": "Status is required",
+      "visibilityRoleRequired": "Visibility is required",
+      "jopPoisitionRequired": "Job position is required"
+    }
+  }
+}

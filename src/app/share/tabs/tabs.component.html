@@ -1,0 +1,3 @@
+<ul class="hfe-tabs">
+  <li (click)="selectTab(tab)" class="hfe-tabs__link" *ngFor="let tab of tabs" [ngClass]="{active: activeTab === tab}">{{tab}}</li>
+</ul>

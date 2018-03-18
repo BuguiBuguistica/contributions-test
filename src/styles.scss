@@ -1,0 +1,22 @@
+@import './styles/base/variables';
+@import './styles/mixins/fonts';
+@import './styles/mixins/media-query';
+@import './styles/base/layout';
+@import './styles/base/utils';
+@import './styles/base/form-validations';
+@import './styles/base/icons';
+
+
+//Import Component styles
+@import './styles/components/header.component';
+@import './styles/components/menu.component';
+@import './styles/components/my-contributions.component';
+@import './styles/components/contribution-card.component';
+@import './styles/components/range-slider.component';
+@import './styles/components/contribution-form.component';
+@import './styles/components/tabs.component';
+@import './styles/components/new-contribution.component';
+
+
+//Vendor
+@import './styles/vendor/datepicker';
