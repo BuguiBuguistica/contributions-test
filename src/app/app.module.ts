@@ -20,6 +20,8 @@ import { NewContributionComponent } from './my-contributions/components/new-cont
 import { HeaderComponent } from './layout/header/header.component';
 import { MenuComponent } from './layout/menu/menu.component';
 import { MyContributionService } from './my-contributions/services/my-contributions.service';
+import { DialogueComponent } from './my-contributions/components/dialogue/dialogue.component';
+import { MessageComponent } from './my-contributions/components/dialogue/components/message.component';
 
 const appRoutes: Routes = [
   { path: '', component: MyContributionsComponent }
@@ -39,7 +41,9 @@ export function createTranslateLoader(http: HttpClient) {
     RangeSliderComponent,
     TabsComponent,
     ContributionFormComponent,
-    NewContributionComponent
+    NewContributionComponent,
+    DialogueComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

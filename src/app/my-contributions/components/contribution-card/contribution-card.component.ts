@@ -25,6 +25,7 @@ export class ContributionCardComponent implements OnInit {
   private contributionCopy: Contribution;
   public tabs: string[] = [];
   public formTab: string;
+  public dialogueTab: string;
   public activeTab: string;
 
   constructor(private myContributionService: MyContributionService) { }
@@ -89,6 +90,7 @@ export class ContributionCardComponent implements OnInit {
   private initTabs(): void {
     this.tabs = this.myContributionService.getTabs();
     this.formTab = this.tabs[0];
+    this.dialogueTab = this.tabs[1];
     this.activeTab = this.tabs[0];
   }
 

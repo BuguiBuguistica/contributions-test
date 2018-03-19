@@ -1,0 +1,29 @@
+@import '../base/variables';
+
+.hfe-dialogue {
+  $height: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0 1.5rem;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    flex: 1;
+    height: $height;
+  }
+
+  &__button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: $height;
+    margin: 0;
+    width: 3rem;
+  }
+}

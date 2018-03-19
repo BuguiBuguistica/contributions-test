@@ -1,0 +1,26 @@
+[
+  {
+    "contributionId": 1,
+    "userId": 1,
+    "publishDate": "Sun Mar 18 2018 12:14:12 GMT+0100 (Romance Standard Time)",
+    "text": "This is a message user 1"
+  },
+  {
+    "contributionId": 1,
+    "userId": 2,
+    "publishDate": "Sun Mar 18 2018 12:14:12 GMT+0100 (Romance Standard Time)",
+    "text": "This is a message user 2"
+  },
+  {
+    "contributionId": 1,
+    "userId": 2,
+    "publishDate": "Sun Mar 18 2018 12:14:12 GMT+0100 (Romance Standard Time)",
+    "text": "asdasdasdasdas"
+  },
+  {
+    "contributionId": 1,
+    "userId": 2,
+    "publishDate": "Sun Mar 18 2018 12:14:12 GMT+0100 (Romance Standard Time)",
+    "text": "1231231231"
+  }
+]

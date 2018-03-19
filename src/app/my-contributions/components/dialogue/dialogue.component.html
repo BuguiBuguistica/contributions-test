@@ -1,0 +1,10 @@
+<section class="hfe-dialogue">
+  <app-message *ngFor="let message of messagesBag" [message]="message"></app-message>
+
+  <div class="hfe-dialogue__form">
+    <textarea class="hfe-dialogue__input" [(ngModel)]="text"></textarea>
+    <button class="hfe-btn-primary hfe-dialogue__button" (click)="addMessage()">
+        <span class="icon-checkmark"></span>
+    </button>
+  </div>
+</section>

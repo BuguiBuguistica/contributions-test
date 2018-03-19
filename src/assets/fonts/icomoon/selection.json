@@ -56,6 +56,35 @@
       "setIdx": 0,
       "setId": 1,
       "iconIdx": 266
+    },
+    {
+      "icon": {
+        "paths": [
+          "M864 128l-480 480-224-224-160 160 384 384 640-640z"
+        ],
+        "tags": [
+          "checkmark",
+          "tick",
+          "correct",
+          "accept",
+          "ok"
+        ],
+        "defaultCode": 59920,
+        "grid": 16,
+        "attrs": []
+      },
+      "attrs": [],
+      "properties": {
+        "ligatures": "checkmark, tick",
+        "name": "checkmark",
+        "order": 4,
+        "id": 273,
+        "prevSize": 32,
+        "code": 59920
+      },
+      "setIdx": 0,
+      "setId": 1,
+      "iconIdx": 272
     }
   ],
   "height": 1024,
