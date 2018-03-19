@@ -1,5 +1,5 @@
 <section class="hfe-my-contributions container">
   <div class="hfe-my-contributions__counter">{{'myContribution.counterLabel' | translate:totalContributions}}</div>
-  <app-new-contribution ></app-new-contribution>
+  <app-new-contribution (contributionAdded)="refreshContributionList()"></app-new-contribution>
   <app-contribution-card *ngFor="let contribution of contributions"  [contribution]="contribution" (savedChanges)="refreshContributionList()"></app-contribution-card>
 </section>

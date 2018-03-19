@@ -4,4 +4,4 @@
   </div>
   <span>{{'card.createNew' | translate}}</span>
 </section>
-<app-contribution-form *ngIf="isFormOpen"></app-contribution-form>
+<app-contribution-form (saveContribution)="onSaveContribution($event)" (cancelChanges)="toogleForm()" [creationMode]="true" *ngIf="isFormOpen"></app-contribution-form>

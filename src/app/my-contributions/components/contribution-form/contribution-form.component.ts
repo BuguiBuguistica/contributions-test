@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ValidationMessageService } from '../../../share/validation-message/validation-message.service';
 import { ContributionFormService } from './services/contribution-form.service';
 import { Status, Role, JobPosition } from './models';
@@ -13,6 +13,8 @@ import { DatepickerOptions } from 'ng2-datepicker';
 })
 export class ContributionFormComponent implements OnInit {
   @Input() contributionModel: Contribution;
+  @Input() creationMode = false;
+
   @Output() saveContribution = new EventEmitter<Contribution>();
   @Output() cancelChanges = new EventEmitter();
 
@@ -53,7 +55,37 @@ export class ContributionFormComponent implements OnInit {
     if (this.contributionForm.invalid) {
       return;
     }
-    const contribution: Contribution = {
+
+    let contribution: Contribution;
+
+    if (this.creationMode) {
+      contribution = this.buildNewContribution();
+    } else {
+      contribution = this.buildContribution();
+    }
+
+    this.saveContribution.emit(contribution);
+  }
+
+  public cancel(): void {
+    this.cancelChanges.emit();
+  }
+
+  private buildNewContribution(): Contribution {
+    return {
+      id: Math.random(),
+      title: this.contributionForm.controls['title'].value,
+      description: this.contributionForm.controls['description'].value,
+      status: this.contributionForm.controls['status'].value,
+      visibilityRole: this.contributionForm.controls['visibilityRole'].value,
+      jobPosition: this.contributionForm.controls['jobPosition'].value,
+      creationDate: new Date(),
+      targetDate: this.targetDate
+    };
+  }
+
+  private buildContribution(): Contribution {
+    return {
       id: this.contributionModel.id,
       title: this.contributionModel.title,
       description: this.contributionForm.controls['description'].value,
@@ -63,12 +95,6 @@ export class ContributionFormComponent implements OnInit {
       creationDate: this.contributionModel.creationDate,
       targetDate: this.targetDate
     };
-
-    this.saveContribution.emit(contribution);
-  }
-
-  public cancel(): void {
-    this.cancelChanges.emit();
   }
 
   private initTabs(): void {
@@ -90,8 +116,12 @@ export class ContributionFormComponent implements OnInit {
       'status': [null, Validators.required],
       'visibilityRole': [null, Validators.required],
       'jobPosition': [null, Validators.required],
-      'targetDate': [null, Validators.required]
+      'targetDate': [null, null]
     });
+
+    if (this.creationMode) {
+      this.contributionForm.addControl('title', new FormControl('', Validators.required));
+    }
   }
 
   private updateForm(): void {

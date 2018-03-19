@@ -19,6 +19,7 @@ import { NewContributionComponent } from './my-contributions/components/new-cont
 // Layout components
 import { HeaderComponent } from './layout/header/header.component';
 import { MenuComponent } from './layout/menu/menu.component';
+import { MyContributionService } from './my-contributions/services/my-contributions.service';
 
 const appRoutes: Routes = [
   { path: '', component: MyContributionsComponent }
@@ -59,7 +60,7 @@ export function createTranslateLoader(http: HttpClient) {
       }
   })
   ],
-  providers: [],
+  providers: [MyContributionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -41,6 +41,13 @@ export class MyContributionService {
     return Promise.resolve();
   }
 
+  public addContribution(contribution: Contribution): Promise<void> {
+    const contributions: Contribution[] = this.getContributionsFromLocalStorage();
+    contributions.unshift(contribution);
+    this.saveInLocalStorage(contributions);
+    return Promise.resolve();
+  }
+
   private saveInLocalStorage(contributions: Contribution[]): void {
     localStorage.setItem(this.CONTRIBUTIONS_KEY, JSON.stringify(contributions));
   }

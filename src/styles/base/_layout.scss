@@ -39,7 +39,8 @@ input[type="text"] {
   color: $darker-color;
   font-family: $MerriweatherSans;
   height: 2.5rem;
-  padding: .5rem;
+  padding: 0 .5rem;
+  width: 100%;
 }
 
 textarea {
