@@ -1,13 +1,6 @@
 @import '../base/variables';
 
 .hfe-contribution-form {
-  background-color: $lighter-color;
-  border: 1px solid $dark-color;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  box-shadow: $shadow;
-  border-top: 0;
-
   &__wrapper {
     display: block;
     padding: 1rem 7rem;

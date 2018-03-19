@@ -19,11 +19,4 @@ export class ContributionFormService {
   public getStatus(): Promise<Status[]> {
     return this.http.get<Status[]>(`${this.ROUTE_BASE}status.mock.json`).toPromise();
   }
-
-  public getTabs(): string[] {
-    return [
-      'Measurements',
-      'Dialogue'
-    ];
-  }
 }

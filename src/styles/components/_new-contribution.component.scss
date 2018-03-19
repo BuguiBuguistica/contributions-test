@@ -17,6 +17,15 @@
   padding: 0 1rem;
   margin-top: 1rem;
 
+  &__form-wrapper {
+    background-color: $lighter-color;
+    border: 1px solid $dark-color;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: $shadow;
+    border-top: 0;
+  }
+
   &.isFormOpen {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;

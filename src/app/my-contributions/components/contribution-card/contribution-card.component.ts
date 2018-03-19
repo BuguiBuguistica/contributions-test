@@ -23,6 +23,9 @@ export class ContributionCardComponent implements OnInit {
   public isEditionTitle = false;
   public isValidTitle = true;
   private contributionCopy: Contribution;
+  public tabs: string[] = [];
+  public formTab: string;
+  public activeTab: string;
 
   constructor(private myContributionService: MyContributionService) { }
 
@@ -30,6 +33,7 @@ export class ContributionCardComponent implements OnInit {
     this.contributionCopy = Object.assign({}, this.contribution);
     this.contributionCopy.range = this.contributionCopy.range || 0;
     this.cutTitle(this.contributionCopy.title);
+    this.initTabs();
   }
 
   public toggleShowMore(event): void {
@@ -74,8 +78,18 @@ export class ContributionCardComponent implements OnInit {
     });
   }
 
+  public onTabSelected(tab: string): void {
+    this.activeTab = tab;
+  }
+
   public onRangeChange(range: number): void {
     this.contributionCopy.range = range;
+  }
+
+  private initTabs(): void {
+    this.tabs = this.myContributionService.getTabs();
+    this.formTab = this.tabs[0];
+    this.activeTab = this.tabs[0];
   }
 
   private resetTitle(): void {

@@ -87,6 +87,12 @@
   }
 
   &__form-wrapper {
+    background-color: $lighter-color;
+    border: 1px solid $dark-color;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: $shadow;
+    border-top: 0;
     opacity: 0;
     max-height: 0;
 
@@ -106,5 +112,10 @@
   &__input {
     margin-bottom: .5rem;
     width: 100%;
+  }
+
+  &__tabs-wrapper {
+    display: block;
+    padding: 1rem 7rem;
   }
 }

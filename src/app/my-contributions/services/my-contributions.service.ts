@@ -48,6 +48,13 @@ export class MyContributionService {
     return Promise.resolve();
   }
 
+  public getTabs(): string[] {
+    return [
+      'Measurements',
+      'Dialogue'
+    ];
+  }
+
   private saveInLocalStorage(contributions: Contribution[]): void {
     localStorage.setItem(this.CONTRIBUTIONS_KEY, JSON.stringify(contributions));
   }

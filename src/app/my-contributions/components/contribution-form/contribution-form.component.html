@@ -1,7 +1,5 @@
 <section class="hfe-contribution-form">
-  <app-tabs class="hfe-contribution-form__wrapper" [tabs]="tabs" (tabSelected)="onTabSelected($event)"></app-tabs>
-
-  <form *ngIf="activeTab === formTab" class="hfa-form" #formDir="ngForm" [formGroup]="contributionForm" (ngSubmit)="submitForm(contributionForm.value)">
+  <form  class="hfa-form" #formDir="ngForm" [formGroup]="contributionForm" (ngSubmit)="submitForm(contributionForm.value)">
     <section class="hfe-contribution-form__wrapper">
 
       <div class="hfe-contribution-form__row" *ngIf="creationMode">

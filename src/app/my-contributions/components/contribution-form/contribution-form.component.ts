@@ -23,9 +23,6 @@ export class ContributionFormComponent implements OnInit {
   public roles: Role[];
   public jobPositions: JobPosition[];
   public targetDate: Date;
-  public activeTab: string;
-  public tabs: string[] = [];
-  public formTab: string;
 
   public options: DatepickerOptions = {
     minYear: 2014,
@@ -42,13 +39,8 @@ export class ContributionFormComponent implements OnInit {
     private contributionFormService: ContributionFormService) { }
 
   public ngOnInit(): void {
-    this.initTabs();
     this.initData();
     this.initForm();
-  }
-
-  public onTabSelected(tab: string): void {
-    this.activeTab = tab;
   }
 
   public submitForm(form: FormGroup): void {
@@ -95,12 +87,6 @@ export class ContributionFormComponent implements OnInit {
       creationDate: this.contributionModel.creationDate,
       targetDate: this.targetDate
     };
-  }
-
-  private initTabs(): void {
-    this.tabs = this.contributionFormService.getTabs();
-    this.formTab = this.tabs[0];
-    this.activeTab = this.tabs[0];
   }
 
   private async initData(): Promise<void> {

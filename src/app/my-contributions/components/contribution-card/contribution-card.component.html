@@ -36,5 +36,9 @@
   </div>
 </section>
 <section class="hfe-contribution-card__form-wrapper" [ngClass]="{'editionMode': isFormOpen }">
-  <app-contribution-form (cancelChanges)="toogleForm()" (saveContribution)="onSaveContribution($event)" [(contributionModel)]="contributionCopy" *ngIf="isFormOpen"></app-contribution-form>
+  <app-tabs class="hfe-contribution-card__tabs-wrapper" [tabs]="tabs" (tabSelected)="onTabSelected($event)"></app-tabs>
+  <div *ngIf="activeTab === formTab">
+    <app-contribution-form (cancelChanges)="toogleForm()" (saveContribution)="onSaveContribution($event)" [(contributionModel)]="contributionCopy"
+      *ngIf="isFormOpen"></app-contribution-form>
+  </div>
 </section>
