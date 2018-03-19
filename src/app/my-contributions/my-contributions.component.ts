@@ -13,6 +13,14 @@ export class MyContributionsComponent implements OnInit {
   constructor(private myContributionsService: MyContributionService) { }
 
   public ngOnInit(): void {
+    this.loadContributions();
+  }
+
+  public refreshContributionList(): void {
+    this.loadContributions();
+  }
+
+  private loadContributions(): void {
     this.myContributionsService.getContributions().then(response => {
       this.contributions = response;
       this.totalContributions = { value: this.contributions.length.toString() };

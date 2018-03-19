@@ -11,7 +11,7 @@
         <div class="hfe-contribution-form__group">
           <span class="hfe-contribution-form__label">{{'form.status' | translate}}</span>
           <select [ngClass]="{'error': validationMessageService.requiredValidation(contributionForm.controls['status'], formDir)}"
-            formControlName="status">
+            formControlName="status" [formControl]="contributionForm.controls['status']">
             <option *ngFor="let st of status" [ngValue]="st">{{st.description}}</option>
           </select>
           <div class="hfa-form__error" *ngIf="validationMessageService.requiredValidation(contributionForm.controls['status'], formDir)">
@@ -20,7 +20,7 @@
         <div class="hfe-contribution-form__group">
           <span class="hfe-contribution-form__label">{{'form.contributionVisibility' | translate}}</span>
           <select [ngClass]="{'error': validationMessageService.requiredValidation(contributionForm.controls['visibilityRole'], formDir)}"
-            formControlName="visibilityRole">
+            formControlName="visibilityRole" [formControl]="contributionForm.controls['visibilityRole']">
             <option *ngFor="let role of roles" [ngValue]="role">{{role.description}}</option>
           </select>
           <div class="hfa-form__error" *ngIf="validationMessageService.requiredValidation(contributionForm.controls['visibilityRole'], formDir)">

@@ -33,5 +33,5 @@
   </div>
 </section>
 <section class="hfe-contribution-card__form-wrapper" [ngClass]="{'editionMode': isFormOpen }">
-  <app-contribution-form [(contributionModel)]="contributionCopy" *ngIf="isFormOpen"></app-contribution-form>
+  <app-contribution-form (saveContribution)="onSaveContribution($event)" [(contributionModel)]="contributionCopy" *ngIf="isFormOpen"></app-contribution-form>
 </section>

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Contribution } from '../../models/contribution.model';
+import { MyContributionService } from '../../services/my-contributions.service';
 
 @Component({
   selector: 'app-contribution-card',
@@ -7,6 +8,8 @@ import { Contribution } from '../../models/contribution.model';
 })
 export class ContributionCardComponent implements OnInit {
   @Input() contribution: Contribution;
+  @Output() savedChanges = new EventEmitter();
+
   private readonly SHOW_MORE = 'card.showMore';
   private readonly SHOW_LESS = 'card.showLess';
   private readonly MAX_TITLE_CHAR = 172;
@@ -20,6 +23,8 @@ export class ContributionCardComponent implements OnInit {
   public displayShowMoreButton = false;
   public isEditionTitle = false;
   private contributionCopy: Contribution;
+
+  constructor(private myContributionService: MyContributionService) {}
 
   public ngOnInit(): void {
     this.contributionCopy = Object.assign({}, this.contribution);
@@ -49,6 +54,14 @@ export class ContributionCardComponent implements OnInit {
 
   public stopPropagation(event): void {
     event.stopPropagation();
+  }
+
+  public onSaveContribution(contribution: Contribution): void {
+    contribution.range = 0;
+    this.myContributionService.updateContribution(contribution).then(() => {
+      this.toogleForm();
+      this.savedChanges.emit();
+    });
   }
 
   private cutTitle(title: string): void {

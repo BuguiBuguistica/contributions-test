@@ -5,9 +5,9 @@ export interface Contribution {
   title: string;
   description: string;
   creationDate: Date;
-  targetDate: Date;
   status: Status;
   jobPosition: JobPosition;
   visibilityRole: Role;
-  range: number;
+  targetDate?: Date;
+  range?: number;
 }

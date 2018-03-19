@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ValidationMessageService } from '../../../share/validation-message/validation-message.service';
 import { ContributionFormService } from './services/contribution-form.service';
@@ -13,6 +13,7 @@ import { DatepickerOptions } from 'ng2-datepicker';
 })
 export class ContributionFormComponent implements OnInit {
   @Input() contributionModel: Contribution;
+  @Output() saveContribution = new EventEmitter<Contribution>();
 
   public contributionForm: FormGroup;
   public status: Status[];
@@ -49,10 +50,20 @@ export class ContributionFormComponent implements OnInit {
 
   public submitForm(form: FormGroup): void {
     if (this.contributionForm.invalid) {
-      console.log('invalid', form);
       return;
     }
-    // TODO: emit event save in contribution card component
+    const contribution: Contribution = {
+      id: this.contributionModel.id,
+      title: this.contributionModel.title,
+      description: this.contributionForm.controls['description'].value,
+      status: this.contributionForm.controls['status'].value,
+      visibilityRole: this.contributionForm.controls['visibilityRole'].value,
+      jobPosition: this.contributionForm.controls['jobPosition'].value,
+      creationDate: this.contributionModel.creationDate,
+      targetDate: this.targetDate
+    };
+
+    this.saveContribution.emit(contribution);
   }
 
   private initTabs(): void {
@@ -82,13 +93,13 @@ export class ContributionFormComponent implements OnInit {
     if (!this.contributionModel) {
       return;
     }
-    this.contributionForm.controls['jobPosition'].setValue(this.jobPositions
-      .find(position => this.contributionModel.jobPosition.id === position.id), { onlySelf: true });
+    const jobPositions = this.jobPositions.find(position => this.contributionModel.jobPosition.id === position.id);
+    this.contributionForm.controls['jobPosition'].setValue(jobPositions);
 
-    this.contributionForm.controls['visibilityRole'].setValue(this.roles
-      .find(role => this.contributionModel.visibilityRole.id === role.id), { onlySelf: true });
+    const visibilityRole = this.roles.find(role => this.contributionModel.visibilityRole.id === role.id);
+    this.contributionForm.controls['visibilityRole'].setValue(visibilityRole);
 
-    this.contributionForm.controls['status'].setValue(this.status
-      .find(st => this.contributionModel.status.id === st.id), { onlySelf: true });
+    const status = this.status.find(st => this.contributionModel.status.id === st.id);
+    this.contributionForm.controls['status'].setValue(status);
   }
 }
