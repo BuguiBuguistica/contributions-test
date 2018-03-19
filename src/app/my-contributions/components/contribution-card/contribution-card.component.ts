@@ -14,7 +14,6 @@ export class ContributionCardComponent implements OnInit {
   private readonly SHOW_LESS = 'card.showLess';
   private readonly MAX_TITLE_CHAR = 172;
 
-  public progressPercentage: number;
   public showMoreActive = false;
   public translateKey = this.SHOW_MORE;
   public isFormOpen = false;
@@ -22,13 +21,14 @@ export class ContributionCardComponent implements OnInit {
   public shortTitle: string;
   public displayShowMoreButton = false;
   public isEditionTitle = false;
+  public isValidTitle = true;
   private contributionCopy: Contribution;
 
-  constructor(private myContributionService: MyContributionService) {}
+  constructor(private myContributionService: MyContributionService) { }
 
   public ngOnInit(): void {
     this.contributionCopy = Object.assign({}, this.contribution);
-    this.progressPercentage = this.contributionCopy ? this.contributionCopy.range : 0;
+    this.contributionCopy.range = this.contributionCopy.range || 0;
     this.cutTitle(this.contributionCopy.title);
   }
 
@@ -47,8 +47,12 @@ export class ContributionCardComponent implements OnInit {
     }
   }
 
-  public editTitle(event): void {
-    this.isEditionTitle = true;
+  public toggleEditTitle(event): void {
+    if (this.isEditionTitle) {
+      this.resetTitle();
+    }
+    this.isEditionTitle = !this.isEditionTitle;
+    this.validateTitle();
     this.stopPropagation(event);
   }
 
@@ -57,11 +61,29 @@ export class ContributionCardComponent implements OnInit {
   }
 
   public onSaveContribution(contribution: Contribution): void {
-    contribution.range = 0;
+    // update contribution range here because is not part of contribution form component
+    if (!this.isValidTitle) {
+      return;
+    }
+
+    contribution.range = this.contributionCopy.range;
+    contribution.title = this.contributionCopy.title;
     this.myContributionService.updateContribution(contribution).then(() => {
       this.toogleForm();
       this.savedChanges.emit();
     });
+  }
+
+  public onRangeChange(range: number): void {
+    this.contributionCopy.range = range;
+  }
+
+  private resetTitle(): void {
+    this.contributionCopy = Object.assign(this.contributionCopy, {title: this.contribution.title});
+  }
+
+  private validateTitle(): void {
+    this.isValidTitle = this.contributionCopy.title.length > 0;
   }
 
   private cutTitle(title: string): void {

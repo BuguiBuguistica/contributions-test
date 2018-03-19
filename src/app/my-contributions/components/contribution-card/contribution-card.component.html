@@ -3,7 +3,10 @@
     <span class="hfe-contribution-card__description" [ngClass]="{'show-more': showMoreActive}" *ngIf="!isEditionTitle">
       {{title}}
     </span>
-    <input class="hfe-contribution-card__input" (click)="stopPropagation($event)" type="text" [(ngModel)]="contributionCopy.title" *ngIf="isEditionTitle" />
+    <input [ngClass]="{'error': !isValidTitle}" (change)="validateTitle()" class="hfe-contribution-card__input" (click)="stopPropagation($event)"
+      type="text" [(ngModel)]="contributionCopy.title" *ngIf="isEditionTitle" />
+    <div class="hfa-form__error" *ngIf="!isValidTitle && isEditionTitle">
+      {{'form.validations.titleRequired' | translate}}</div>
     <div class="hfe-contribution-card__button" [ngClass]="{'show-more': showMoreActive}" *ngIf="displayShowMoreButton && !isEditionTitle">
       <div (click)="toggleShowMore($event)">{{translateKey | translate}}</div>
     </div>
@@ -25,13 +28,13 @@
       </span>
     </div>
   </div>
-  <div class="hfe-contribution-card__edit" (click)="editTitle($event)" [ngClass]="{'editionMode': isFormOpen }">
+  <div class="hfe-contribution-card__edit" (click)="toggleEditTitle($event)" [ngClass]="{'editionMode': isFormOpen, 'editTitleEnable': isEditionTitle }">
     <img src="assets/images/pencil.svg" />
   </div>
   <div class="hfe-contribution-card__bar">
-    <app-range-slider (click)="stopPropagation($event)" [(progressPercentage)]="progressPercentage"></app-range-slider>
+    <app-range-slider [disabled]="!isFormOpen" (rangeChanged)="onRangeChange($event)" (click)="stopPropagation($event)" [progressPercentage]="contributionCopy.range"></app-range-slider>
   </div>
 </section>
 <section class="hfe-contribution-card__form-wrapper" [ngClass]="{'editionMode': isFormOpen }">
-  <app-contribution-form (saveContribution)="onSaveContribution($event)" [(contributionModel)]="contributionCopy" *ngIf="isFormOpen"></app-contribution-form>
+  <app-contribution-form (cancelChanges)="toogleForm()" (saveContribution)="onSaveContribution($event)" [(contributionModel)]="contributionCopy" *ngIf="isFormOpen"></app-contribution-form>
 </section>

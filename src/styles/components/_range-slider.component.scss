@@ -22,6 +22,20 @@
       opacity: 1;
     }
 
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &:disabled::-webkit-slider-thumb {
+      border: 3px solid $lighter-ok-color;
+      cursor: not-allowed;
+    }
+
+    &:disabled::-moz-range-thumb {
+      border: 3px solid $lighter-ok-color;
+      cursor: not-allowed;
+    }
+
     &::-webkit-slider-thumb {
       appearance: none;
       background-color: $lighter-color;

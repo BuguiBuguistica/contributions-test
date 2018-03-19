@@ -27,7 +27,8 @@
       "descriptionRequired": "Description is required",
       "statusRequired": "Status is required",
       "visibilityRoleRequired": "Visibility is required",
-      "jopPoisitionRequired": "Job position is required"
+      "jopPoisitionRequired": "Job position is required",
+      "titleRequired": "Title is required"
     }
   }
 }

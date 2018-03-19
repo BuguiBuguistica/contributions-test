@@ -14,12 +14,13 @@ import { DatepickerOptions } from 'ng2-datepicker';
 export class ContributionFormComponent implements OnInit {
   @Input() contributionModel: Contribution;
   @Output() saveContribution = new EventEmitter<Contribution>();
+  @Output() cancelChanges = new EventEmitter();
 
   public contributionForm: FormGroup;
   public status: Status[];
   public roles: Role[];
   public jobPositions: JobPosition[];
-  public targetDate: Date = new Date();
+  public targetDate: Date;
   public activeTab: string;
   public tabs: string[] = [];
   public formTab: string;
@@ -66,6 +67,10 @@ export class ContributionFormComponent implements OnInit {
     this.saveContribution.emit(contribution);
   }
 
+  public cancel(): void {
+    this.cancelChanges.emit();
+  }
+
   private initTabs(): void {
     this.tabs = this.contributionFormService.getTabs();
     this.formTab = this.tabs[0];
@@ -93,6 +98,9 @@ export class ContributionFormComponent implements OnInit {
     if (!this.contributionModel) {
       return;
     }
+
+    this.targetDate = this.contributionModel.targetDate || null;
+
     const jobPositions = this.jobPositions.find(position => this.contributionModel.jobPosition.id === position.id);
     this.contributionForm.controls['jobPosition'].setValue(jobPositions);
 

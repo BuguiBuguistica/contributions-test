@@ -28,7 +28,7 @@
         </div>
         <div class="hfe-contribution-form__group">
           <span class="hfe-contribution-form__label">{{'form.targetDate' | translate}}</span>
-          <ng-datepicker class="hfa-datepicker hfa-datepicker-calendar" [options]="options" [(ngModel)]="targetDate" [formControl]="contributionForm.controls['targetDate']"></ng-datepicker>
+          <ng-datepicker class="hfa-datepicker hfa-datepicker-calendar" [options]="options" formControlName="targetDate" [(ngModel)]="targetDate" [formControl]="contributionForm.controls['targetDate']"></ng-datepicker>
         </div>
         <div class="hfe-contribution-form__group">
           <span class="hfe-contribution-form__label">{{'form.jobPosition' | translate}}</span>
@@ -42,7 +42,7 @@
       </div>
     </section>
     <footer class="hfe-contribution-form__footer">
-      <button class="hfe-btn-secondary" type="button">{{'form.cancel' | translate}}</button>
+      <button class="hfe-btn-secondary" type="button" (click)="cancel()">{{'form.cancel' | translate}}</button>
       <button class="hfe-btn-primary" type="submitForm">{{'form.save' | translate}}</button>
     </footer>
   </form>

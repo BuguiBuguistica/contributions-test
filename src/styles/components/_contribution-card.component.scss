@@ -79,6 +79,11 @@
     &.editionMode {
       opacity: 1;
     }
+
+    &.editTitleEnable {
+      transform: rotate(-45deg);
+      transition: all $transition-regular ease-in;
+    }
   }
 
   &__form-wrapper {
