@@ -1,4 +1,5 @@
 @import '../base/variables';
+@import '../mixins/animations';
 
 .hfe-new-contribution {
   $border-button-radius: 20rem;
@@ -22,6 +23,18 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     border-top: 0;
+    display: none;
+    max-height: 0;
+    opacity: 0;
+
+    &.isFormOpen {
+      animation: openForm 2s ease-in;
+      display: block;
+      max-height: 80rem;
+      opacity: 1;
+
+      @include animationCard(openForm)
+    }
   }
 
   &.isFormOpen {

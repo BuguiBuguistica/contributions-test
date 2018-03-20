@@ -4,6 +4,6 @@
   </div>
   <span>{{'card.createNew' | translate}}</span>
 </section>
-<div class="hfe-new-contribution__form-wrapper" *ngIf="isFormOpen">
+<div class="hfe-new-contribution__form-wrapper" [ngClass]="{'isFormOpen': isFormOpen}">
     <app-contribution-form (saveContribution)="onSaveContribution($event)" (cancelChanges)="toogleForm()" [creationMode]="true"></app-contribution-form>
 </div>

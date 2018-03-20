@@ -1,0 +1,16 @@
+
+@mixin animationCard($name) {
+  @keyframes #{$name} {
+    0% {
+      opacity: 0;
+      max-height: 0;
+    }
+    30% {
+      opacity: 1;
+      max-height: 40rem;
+    }
+    100% {
+      max-height: 80rem;
+    }
+  }
+}
