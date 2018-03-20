@@ -11,13 +11,13 @@
       <div (click)="toggleShowMore($event)">{{translateKey | translate}}</div>
     </div>
     <div class="hfe-contribution-card__details">
-      <span class="u-mr-1">
+      <span class="u-mr-0">
         {{'card.creation' | translate}}
       </span>
       <span class="hfe-contribution-card__separator">
         {{contributionCopy.creationDate | date:'MM/dd/yyyy'}}
       </span>
-      <span class="u-mr-1" *ngIf="contribution.targetDate">
+      <span class="u-mr-0" *ngIf="contribution.targetDate">
         {{'card.target' | translate}}
       </span>
       <span class="hfe-contribution-card__separator" *ngIf="contributionCopy.targetDate">
@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="hfe-contribution-card__edit" (click)="toggleEditTitle($event)" [ngClass]="{'editionMode': isFormOpen, 'editTitleEnable': isEditionTitle }">
-    <img src="assets/images/pencil.svg" />
+    <img class="hfe-contribution-card__icon" src="assets/images/pencil.svg" />
   </div>
   <div class="hfe-contribution-card__bar">
     <app-range-slider [disabled]="!isFormOpen" (rangeChanged)="onRangeChange($event)" (click)="stopPropagation($event)" [progressPercentage]="contributionCopy.range"></app-range-slider>

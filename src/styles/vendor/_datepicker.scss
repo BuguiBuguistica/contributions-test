@@ -4,18 +4,18 @@ body .hfa-datepicker {
   position: relative;
 
   &:after {
-    content: "\e953";
+    content: "\e902";
     color: $primary-color;
     font-family: 'icomoon';
     position: absolute;
     top: .8rem;
-    right: .5rem;
+    right: 1rem;
   }
 }
 
-
 body .hfa-datepicker {
   .ngx-datepicker-container[_ngcontent-c0] .ngx-datepicker-input[_ngcontent-c0] {
+    padding: 0 1rem;
     box-sizing: border-box;
     width: 100%;
   }

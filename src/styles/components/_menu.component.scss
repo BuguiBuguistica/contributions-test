@@ -1,17 +1,25 @@
 @import '../base/variables';
 
 .hfe-menu {
+  $menu-height: 4rem;
+
   background-color: $lighter-color;
   border-bottom: 1px solid $dark-color;
-  height: 4rem;
-  line-height: 4rem;
+  height: $menu-height;
+  line-height: $menu-height;
   width: 100%;
+
+  &__links {
+    display: flex;
+  }
 
   &__link {
     color: $darker-color;
+    font-weight: $font-bold;
+    height: $menu-height - .05rem;
     text-align: center;
     text-decoration: none;
-    width: 9rem;
+    text-transform: uppercase;
 
     &.active {
       border-bottom: 2px solid $primary-color;

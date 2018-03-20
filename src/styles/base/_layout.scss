@@ -27,6 +27,9 @@ input[type="text"],
 select {
   border: 1px solid $dark-color;
   border-radius: 2px;
+  box-sizing: border-box;
+  color: rgba($darker-color, .8);
+  font-family: $MerriweatherSans;
 
   &:focus{
     border: 1px solid $primary-color;
@@ -36,10 +39,8 @@ select {
 
 select,
 input[type="text"] {
-  color: $darker-color;
-  font-family: $MerriweatherSans;
-  height: 2.5rem;
-  padding: 0 .5rem;
+  height: 3rem;
+  padding: 0 1rem;
   width: 100%;
 }
 
@@ -47,6 +48,7 @@ textarea {
   font-family: $MerriweatherSans;
   font-size: $font-xs;
   line-height: $font-xl;
+  padding: 2rem;
   resize: none;
 }
 
@@ -89,7 +91,7 @@ li {
   background-color: $lighter-color;
   color: $darker-color;
   border: 1px solid $dark-color;
-  box-shadow: 3px 6px 6px -4px $dark-color;
+  box-shadow: 0 3px 8px 0 $dark-color;
 
   &:hover {
     background-color: $light-color;

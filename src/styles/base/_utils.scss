@@ -1,15 +1,19 @@
 .u {
   $half: .5rem;
 
-  &-mt-1 {
+  &-mt-0 {
     margin-top: $half;
   }
 
-  &-mb-1 {
+  &-mb-0 {
     margin-bottom: $half;
   }
 
-  &-mr-1 {
+  &-mr-0 {
     margin-right: $half;
+  }
+
+  &-mr-1 {
+    margin-right: 1rem;
   }
 }
