@@ -17,7 +17,7 @@
     &.animateBox {
       opacity: 1;
       transform: translateX(0);
-      transition: all $transition-regular ease;
+      transition: all $transition-fast ease;
     }
 
     &:after {
@@ -38,7 +38,7 @@
       &.isCurrentUser {
         opacity: 1;
         transform: translateX(0);
-        transition: all $transition-regular ease;
+        transition: all $transition-fast ease;
       }
     }
 

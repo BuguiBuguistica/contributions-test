@@ -85,6 +85,10 @@ li {
     background-color: $darker-primary-color;
     transition: background-color $transition-regular ease-in;
   }
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .hfe-btn-secondary {
@@ -96,6 +100,10 @@ li {
   &:hover {
     background-color: $light-color;
     transition: background-color $transition-regular ease-in;
+  }
+
+  &:focus {
+    outline: 0;
   }
 }
 

@@ -1,16 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { DialogueService } from './services/dialogue.service';
 import { Message } from './models';
-
+import * as $ from 'jquery';
 @Component({
   providers: [DialogueService],
   selector: 'app-dialogue',
   templateUrl: './dialogue.component.html'
 })
-export class DialogueComponent implements OnInit {
+export class DialogueComponent implements OnInit, AfterViewInit {
   @Input() contributionId: number;
 
-  public readonly DIALOGUE_AREA_ID = 'dialogueContent';
+  public readonly DIALOGUE_AREA_ID = '#dialogueContent';
   public text: string;
   public messagesBag: Message[] = [];
 
@@ -27,12 +27,17 @@ export class DialogueComponent implements OnInit {
     });
   }
 
+  public ngAfterViewInit(): void {
+    this.scrollToBottom();
+  }
+
   public addMessage(): void {
     const message = new Message(this.contributionId, this.currentUserId, this.text, true);
     message.isOwner = this.USER_ID_OWNER === this.currentUserId;
     this.messagesBag.push(message);
-    this.dialogueService.addMessage(message);
-    this.scrollToBottom();
+    this.dialogueService.addMessage(message).then(() => {
+      this.scrollToBottom();
+    });
     this.resetInput();
   }
 
@@ -45,7 +50,8 @@ export class DialogueComponent implements OnInit {
   }
 
   private scrollToBottom(): void {
-    const dialogueContainer = document.getElementById(this.DIALOGUE_AREA_ID);
-    dialogueContainer.scrollTop = dialogueContainer.scrollHeight;
+    const scrollHeight = 2200;
+    const scrollVelocity = 1000;
+    $(this.DIALOGUE_AREA_ID).animate({ scrollTop: scrollHeight}, scrollVelocity);
   }
 }
