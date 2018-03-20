@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { DialogueService } from './services/dialogue.service';
 import { Message } from './models';
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
 @Component({
   providers: [DialogueService],
   selector: 'app-dialogue',
@@ -52,6 +52,6 @@ export class DialogueComponent implements OnInit, AfterViewInit {
   private scrollToBottom(): void {
     const scrollHeight = 2200;
     const scrollVelocity = 1000;
-    $(this.DIALOGUE_AREA_ID).animate({ scrollTop: scrollHeight}, scrollVelocity);
+    // $(this.DIALOGUE_AREA_ID).animate({ scrollTop: scrollHeight}, scrollVelocity);
   }
 }
