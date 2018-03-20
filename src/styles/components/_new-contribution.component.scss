@@ -28,7 +28,7 @@
     opacity: 0;
 
     &.isFormOpen {
-      animation: openForm 2s ease-in;
+      animation: openForm 1s ease-in;
       display: block;
       max-height: 80rem;
       opacity: 1;
