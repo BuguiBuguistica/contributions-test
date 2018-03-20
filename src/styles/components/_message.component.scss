@@ -62,4 +62,8 @@
     margin-bottom: .3rem;
     width: 100%;
   }
+
+  &__content {
+    word-wrap: break-word;
+  }
 }
