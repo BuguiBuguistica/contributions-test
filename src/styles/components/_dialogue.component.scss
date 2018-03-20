@@ -2,8 +2,6 @@
 
 .hfe-dialogue {
   $height: 3rem;
-  display: flex;
-  flex-direction: column;
 
   &__form {
     display: flex;
@@ -25,5 +23,19 @@
     height: $height;
     margin: 0;
     width: 3rem;
+  }
+
+  &__switch {
+    color: $grey-color;
+    cursor: pointer;
+    font-size: $font-xxs;
+  }
+
+  &__messages-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-height: 800px;
+    overflow-x: hidden;
+    padding: 2rem;
   }
 }

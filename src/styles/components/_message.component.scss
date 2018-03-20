@@ -1,16 +1,24 @@
 @import '../base/variables';
 
 .hfe-message {
-
   &__box {
     background-color: $light-color;
     border-radius: 4px;
     float: left;
+    font-size: $font-s;
     margin-top: .5rem;
     margin-bottom: .5rem;
     max-width: 80%;
     padding: 1rem;
+    opacity: 0;
+    transform: translateX(-500px);
     position: relative;
+
+    &.animateBox {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all $transition-regular ease;
+    }
 
     &:after {
       content:"";
@@ -26,10 +34,19 @@
         z-index: 1;
     }
 
+    &.animateBox {
+      &.isCurrentUser {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all $transition-regular ease;
+      }
+    }
+
     &.isCurrentUser {
       background-color: rgba($lighter-primary-color, .4);
       color: $primary-color;
       float: right;
+      transform: translateX(800px);
 
       &:after {
         content:"";
@@ -37,5 +54,12 @@
         left: 100%;
       }
     }
+  }
+
+  &__date {
+    display: block;
+    font-size: $font-xxs;
+    margin-bottom: .3rem;
+    width: 100%;
   }
 }

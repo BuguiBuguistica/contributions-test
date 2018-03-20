@@ -10,27 +10,42 @@ import { Message } from './models';
 export class DialogueComponent implements OnInit {
   @Input() contributionId: number;
 
+  public readonly DIALOGUE_AREA_ID = 'dialogueContent';
   public text: string;
   public messagesBag: Message[] = [];
 
-  private readonly USER_ID_HARDCODE = 1;
+  private readonly USER_ID_OWNER = 1;
+  private readonly OTHER_USER_ID = 2;
+  private currentUserId = this.USER_ID_OWNER;
 
-  constructor(private dialogueService: DialogueService) {}
+  constructor(private dialogueService: DialogueService) { }
 
   public ngOnInit(): void {
-    this.dialogueService.getMessages(this.contributionId, this.USER_ID_HARDCODE).then(messages => {
+    this.dialogueService.getMessages(this.contributionId, this.currentUserId).then(messages => {
       this.messagesBag = messages;
+      this.scrollToBottom();
     });
   }
 
   public addMessage(): void {
-    const message = new Message(this.contributionId, this.USER_ID_HARDCODE, this.text, true);
+    const message = new Message(this.contributionId, this.currentUserId, this.text, true);
+    message.isOwner = this.USER_ID_OWNER === this.currentUserId;
     this.messagesBag.push(message);
     this.dialogueService.addMessage(message);
+    this.scrollToBottom();
     this.resetInput();
+  }
+
+  public switchUsers(): void {
+    this.currentUserId = this.currentUserId === this.USER_ID_OWNER ? this.OTHER_USER_ID : this.USER_ID_OWNER;
   }
 
   private resetInput(): void {
     this.text = '';
+  }
+
+  private scrollToBottom(): void {
+    const dialogueContainer = document.getElementById(this.DIALOGUE_AREA_ID);
+    dialogueContainer.scrollTop = dialogueContainer.scrollHeight;
   }
 }

@@ -1,5 +1,6 @@
 <section class="hfe-message">
-  <div class="hfe-message__box" [ngClass]="{'isCurrentUser': message.isOwner}">
-    {{message.text}}
+  <div class="hfe-message__box" [ngClass]="{'isCurrentUser': message.isOwner, 'animateBox': displayMessage}">
+    <span class="hfe-message__content hfe-message__date">{{message.publishDate | date:'shortTime'}}</span>
+    <span class="hfe-message__content">{{message.text}}</span>
   </div>
 </section>

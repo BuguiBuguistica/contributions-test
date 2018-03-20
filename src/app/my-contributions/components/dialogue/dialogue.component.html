@@ -1,10 +1,13 @@
 <section class="hfe-dialogue">
-  <app-message *ngFor="let message of messagesBag" [message]="message"></app-message>
+  <div class="hfe-dialogue__messages-wrapper" [id]="DIALOGUE_AREA_ID">
+    <app-message *ngFor="let message of messagesBag" [message]="message"></app-message>
+  </div>
 
   <div class="hfe-dialogue__form">
     <textarea class="hfe-dialogue__input" [(ngModel)]="text"></textarea>
     <button class="hfe-btn-primary hfe-dialogue__button" (click)="addMessage()">
-        <span class="icon-checkmark"></span>
+      <span class="icon-checkmark"></span>
     </button>
   </div>
+  <div class="hfe-dialogue__switch" (click)="switchUsers()">Switch user (just for test)</div>
 </section>
