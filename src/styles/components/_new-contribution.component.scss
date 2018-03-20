@@ -47,7 +47,7 @@
     transition: all $transition-slow ease;
 
     .hfe-new-contribution__button {
-      color: $darker-primary-color;
+      background-color: $darker-primary-color;
       transition: color $transition-regular ease;
     }
 
@@ -83,22 +83,27 @@
   }
 
   &__button {
-    background-color: $lighter-color;
+    background-color: $primary-color;
     border-radius: 20rem;
     color: $primary-color;
     display: flex;
     font-size: 2rem;
     height: 2rem;
-    left: .43rem;
+    left: .4rem;
     line-height: 1rem;
     position: absolute;
     text-align: center;
-    top: .43rem;
+    top: .4rem;
     width: 2rem;
     z-index: 1000;
 
     &:before {
-      line-height: 2rem;
+      content: '+';
+      line-height: 2.2rem;
+      text-align: center;
+      margin-left: .30rem;
+      color: $lighter-color;
+      font-weight: $font-light;
     }
   }
 

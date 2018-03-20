@@ -57,8 +57,9 @@
   }
 
   &__button {
-    height: 2.5rem;;
-    padding: 0 1rem;
-    width: 6rem;
+    font-size: $font-xxs;
+    height: 2.3rem;
+    padding: 0 .5rem;
+    width: 5rem;
   }
 }

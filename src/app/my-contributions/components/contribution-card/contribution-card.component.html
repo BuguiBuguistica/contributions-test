@@ -3,8 +3,8 @@
     <span class="hfe-contribution-card__description" [ngClass]="{'show-more': showMoreActive}" *ngIf="!isEditionTitle">
       {{title}}
     </span>
-    <input [ngClass]="{'error': !isValidTitle}" (change)="validateTitle()" class="hfe-contribution-card__input" (click)="stopPropagation($event)"
-      type="text" [(ngModel)]="contributionCopy.title" *ngIf="isEditionTitle" />
+    <textarea id="titleInput" [ngClass]="{'error': !isValidTitle}" (change)="validateTitle()" class="hfe-contribution-card__input" (click)="stopPropagation($event)"
+      [(ngModel)]="contributionCopy.title" *ngIf="isEditionTitle" maxlength="280"></textarea>
     <div class="hfa-form__error" *ngIf="!isValidTitle && isEditionTitle">
       {{'form.validations.titleRequired' | translate}}</div>
     <div class="hfe-contribution-card__button" [ngClass]="{'show-more': showMoreActive}" *ngIf="displayShowMoreButton && !isEditionTitle">

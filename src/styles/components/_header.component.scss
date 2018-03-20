@@ -3,12 +3,13 @@
 
 .hfe-header {
   $distance: 1.5rem;
+  $icon-size: 1.5rem;
 
   align-items: center;
   background-color: $lighter-color;
   border-bottom: 2px solid $dark-color;
   display: flex;
-  height: 5rem;
+  height: 4.5rem;
   padding: .5rem 0;
   width: 100%;
 
@@ -25,7 +26,7 @@
   }
 
   &__bar-icon {
-    height: 2rem;
+    height: $icon-size;
     margin-left: $distance;
     margin-right: 1rem;
   }
@@ -37,7 +38,7 @@
 
   &__logo {
     display: flex;
-    height: 2rem;
+    height: $icon-size;
 
     &::after {
       content:'';

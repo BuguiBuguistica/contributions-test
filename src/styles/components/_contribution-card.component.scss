@@ -104,7 +104,14 @@
     }
   }
 
+  textarea {
+    border: none;
+    padding: 0;
+    height: 100px;
+  }
+
   &__input {
+    background: transparent;
     margin-bottom: .5rem;
     width: 100%;
   }

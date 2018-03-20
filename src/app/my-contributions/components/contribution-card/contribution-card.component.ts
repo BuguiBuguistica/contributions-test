@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Contribution } from '../../models/contribution.model';
 import { MyContributionService } from '../../services/my-contributions.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-contribution-card',
@@ -56,7 +57,14 @@ export class ContributionCardComponent implements OnInit {
     if (this.isEditionTitle) {
       this.resetTitle();
     }
+
     this.isEditionTitle = !this.isEditionTitle;
+
+    if (this.isEditionTitle) {
+      setTimeout(() => {
+        $('#titleInput').focus();
+      }, 800);
+    }
     this.validateTitle();
     this.stopPropagation(event);
   }
@@ -95,7 +103,7 @@ export class ContributionCardComponent implements OnInit {
   }
 
   private resetTitle(): void {
-    this.contributionCopy = Object.assign(this.contributionCopy, {title: this.contribution.title});
+    this.contributionCopy = Object.assign(this.contributionCopy, { title: this.contribution.title });
   }
 
   private validateTitle(): void {
