@@ -1,18 +1,4 @@
 # contributions-test
-Manage contributions
-
-
-List:
-![alt text](https://github.com/BuguiBuguistica/contributions-test/tree/master/src/assets/images/dialogue.png "List")
-
-Edition:
-![alt text](https://github.com/BuguiBuguistica/contributions-test/tree/master/src/assets/images/edition_contribution.png "Edition")
-
-Creation:
-![alt text](https://github.com/BuguiBuguistica/contributions-test/tree/master/src/assets/images/create_contribution.png "Creation")
-
-Dialogue:
-![alt text](https://github.com/BuguiBuguistica/contributions-test/tree/master/src/assets/images/dialogue.png "Dialogue")
 
 ### Getting started
 
